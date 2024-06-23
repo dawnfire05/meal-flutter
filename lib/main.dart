@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 
-void main() {
+void main() async {
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting();
+  Intl.defaultLocale = widgetsBinding.platformDispatcher.locale.languageCode;
   runApp(const MainApp());
 }
 
