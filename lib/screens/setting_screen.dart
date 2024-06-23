@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rice/palette.dart';
+import 'package:rice/widgets/rice_radio.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -7,9 +8,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('설정'),
-      ),
+      appBar: AppBar(title: const Text('설정')),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -32,7 +31,7 @@ class SettingScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Checkbox(value: true, onChanged: (_) {}),
+                      RiceRadio(value: true, onChanged: (_) {}),
                       const Text(
                         '한국어 (Korean)',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
@@ -41,7 +40,7 @@ class SettingScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Checkbox(value: false, onChanged: (_) {}),
+                      RiceRadio(value: false, onChanged: (_) {}),
                       const Text(
                         '영어 (English)',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
@@ -69,7 +68,7 @@ class SettingScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Checkbox(value: true, onChanged: (_) {}),
+                      RiceRadio(value: true, onChanged: (_) {}),
                       const Text(
                         '제 1학생식당',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
@@ -78,7 +77,7 @@ class SettingScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Checkbox(value: false, onChanged: (_) {}),
+                      RiceRadio(value: false, onChanged: (_) {}),
                       const Text(
                         '제 2학생식당',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
