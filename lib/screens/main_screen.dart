@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:rice/palette.dart';
+import 'package:rice/screens/setting_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -20,7 +21,10 @@ class MainScreen extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(Icons.settings),
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SettingScreen()),
+              ),
             ),
           ],
           bottom: const TabBar(
@@ -168,7 +172,7 @@ class _MealContent extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (_, i) => Text(
               menus[i],
-              style: const TextStyle(fontSize: 16, color: Color(0xFF252525)),
+              style: const TextStyle(fontSize: 16, color: Palette.dark),
             ),
             separatorBuilder: (_, __) => const SizedBox(height: 2),
             itemCount: menus.length,
