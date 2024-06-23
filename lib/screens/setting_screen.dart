@@ -2,9 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:rice/palette.dart';
 import 'package:rice/widgets/rice_radio.dart';
 
-class SettingScreen extends StatelessWidget {
+enum Language { korean, english }
+
+enum WidgetRestaurant { first, second }
+
+class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
 
+  @override
+  State<SettingScreen> createState() => _SettingScreenState();
+}
+
+class _SettingScreenState extends State<SettingScreen> {
+  Language _language = Language.korean;
+  WidgetRestaurant _widgetRestaurant = WidgetRestaurant.first;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +42,11 @@ class SettingScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      RiceRadio(value: true, onChanged: (_) {}),
+                      RiceRadio(
+                        value: Language.korean,
+                        groupValue: _language,
+                        onChanged: (v) => setState(() => _language = v),
+                      ),
                       const Text(
                         '한국어 (Korean)',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
@@ -40,7 +55,11 @@ class SettingScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      RiceRadio(value: false, onChanged: (_) {}),
+                      RiceRadio(
+                        value: Language.english,
+                        groupValue: _language,
+                        onChanged: (v) => setState(() => _language = v),
+                      ),
                       const Text(
                         '영어 (English)',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
@@ -68,7 +87,11 @@ class SettingScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      RiceRadio(value: true, onChanged: (_) {}),
+                      RiceRadio(
+                        value: WidgetRestaurant.first,
+                        groupValue: _widgetRestaurant,
+                        onChanged: (v) => setState(() => _widgetRestaurant = v),
+                      ),
                       const Text(
                         '제 1학생식당',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
@@ -77,7 +100,11 @@ class SettingScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      RiceRadio(value: false, onChanged: (_) {}),
+                      RiceRadio(
+                        value: WidgetRestaurant.second,
+                        groupValue: _widgetRestaurant,
+                        onChanged: (v) => setState(() => _widgetRestaurant = v),
+                      ),
                       const Text(
                         '제 2학생식당',
                         style: TextStyle(fontSize: 16, color: Palette.dark),
