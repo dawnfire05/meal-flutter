@@ -15,6 +15,14 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		D1DD126B2C27BF4E00AA8930 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DD126A2C27BF4E00AA8930 /* WidgetKit.framework */; };
+		D1DD126D2C27BF4E00AA8930 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DD126C2C27BF4E00AA8930 /* SwiftUI.framework */; };
+		D1DD12702C27BF4E00AA8930 /* RiceWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD126F2C27BF4E00AA8930 /* RiceWidgetBundle.swift */; };
+		D1DD12722C27BF4E00AA8930 /* RiceWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD12712C27BF4E00AA8930 /* RiceWidgetLiveActivity.swift */; };
+		D1DD12742C27BF4E00AA8930 /* RiceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD12732C27BF4E00AA8930 /* RiceWidget.swift */; };
+		D1DD12762C27BF4E00AA8930 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD12752C27BF4E00AA8930 /* AppIntent.swift */; };
+		D1DD12782C27BF4F00AA8930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DD12772C27BF4F00AA8930 /* Assets.xcassets */; };
+		D1DD127C2C27BF4F00AA8930 /* RiceWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D1DD12692C27BF4E00AA8930 /* RiceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F7ABE02E22B2AF23C22AC911 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C797163ABACBA26BEFBF09 /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +33,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
 			remoteInfo = Runner;
+		};
+		D1DD127A2C27BF4F00AA8930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1DD12682C27BF4E00AA8930;
+			remoteInfo = RiceWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -37,6 +52,17 @@
 			files = (
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1DD127D2C27BF5000AA8930 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D1DD127C2C27BF4F00AA8930 /* RiceWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -65,6 +91,15 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1DD12692C27BF4E00AA8930 /* RiceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RiceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1DD126A2C27BF4E00AA8930 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D1DD126C2C27BF4E00AA8930 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D1DD126F2C27BF4E00AA8930 /* RiceWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiceWidgetBundle.swift; sourceTree = "<group>"; };
+		D1DD12712C27BF4E00AA8930 /* RiceWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiceWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		D1DD12732C27BF4E00AA8930 /* RiceWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiceWidget.swift; sourceTree = "<group>"; };
+		D1DD12752C27BF4E00AA8930 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		D1DD12772C27BF4F00AA8930 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1DD12792C27BF4F00AA8930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +119,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1DD12662C27BF4E00AA8930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1DD126D2C27BF4E00AA8930 /* SwiftUI.framework in Frameworks */,
+				D1DD126B2C27BF4E00AA8930 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,7 +141,6 @@
 				33C814AB79D5ACBD48D9DEF8 /* Pods-RunnerTests.release.xcconfig */,
 				136961A0709470A34E0525BB /* Pods-RunnerTests.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -125,6 +168,7 @@
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
+				D1DD126E2C27BF4E00AA8930 /* RiceWidget */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				2EDA96735C2CE5DCF8097157 /* Pods */,
@@ -137,6 +181,7 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
+				D1DD12692C27BF4E00AA8930 /* RiceWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,11 +201,26 @@
 			path = Runner;
 			sourceTree = "<group>";
 		};
+		D1DD126E2C27BF4E00AA8930 /* RiceWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D1DD126F2C27BF4E00AA8930 /* RiceWidgetBundle.swift */,
+				D1DD12712C27BF4E00AA8930 /* RiceWidgetLiveActivity.swift */,
+				D1DD12732C27BF4E00AA8930 /* RiceWidget.swift */,
+				D1DD12752C27BF4E00AA8930 /* AppIntent.swift */,
+				D1DD12772C27BF4F00AA8930 /* Assets.xcassets */,
+				D1DD12792C27BF4F00AA8930 /* Info.plist */,
+			);
+			path = RiceWidget;
+			sourceTree = "<group>";
+		};
 		D6F33F2BAF53A99D9A990139 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				68C797163ABACBA26BEFBF09 /* Pods_Runner.framework */,
 				3687EF910A41CC5FA2790AD2 /* Pods_RunnerTests.framework */,
+				D1DD126A2C27BF4E00AA8930 /* WidgetKit.framework */,
+				D1DD126C2C27BF4E00AA8930 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,15 +259,34 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				145C6026F51A9FE91E2362FB /* [CP] Embed Pods Frameworks */,
+				D1DD127D2C27BF5000AA8930 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D1DD127B2C27BF4F00AA8930 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
 			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D1DD12682C27BF4E00AA8930 /* RiceWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1DD12812C27BF5000AA8930 /* Build configuration list for PBXNativeTarget "RiceWidgetExtension" */;
+			buildPhases = (
+				D1DD12652C27BF4E00AA8930 /* Sources */,
+				D1DD12662C27BF4E00AA8930 /* Frameworks */,
+				D1DD12672C27BF4E00AA8930 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RiceWidgetExtension;
+			productName = RiceWidgetExtension;
+			productReference = D1DD12692C27BF4E00AA8930 /* RiceWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -216,6 +295,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
@@ -226,6 +306,9 @@
 					97C146ED1CF9000F007C117D = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1100;
+					};
+					D1DD12682C27BF4E00AA8930 = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -244,6 +327,7 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
+				D1DD12682C27BF4E00AA8930 /* RiceWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -264,6 +348,14 @@
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1DD12672C27BF4E00AA8930 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1DD12782C27BF4F00AA8930 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +474,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1DD12652C27BF4E00AA8930 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1DD12702C27BF4E00AA8930 /* RiceWidgetBundle.swift in Sources */,
+				D1DD12762C27BF4E00AA8930 /* AppIntent.swift in Sources */,
+				D1DD12742C27BF4E00AA8930 /* RiceWidget.swift in Sources */,
+				D1DD12722C27BF4E00AA8930 /* RiceWidgetLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -389,6 +492,11 @@
 			isa = PBXTargetDependency;
 			target = 97C146ED1CF9000F007C117D /* Runner */;
 			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
+		};
+		D1DD127B2C27BF4F00AA8930 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1DD12682C27BF4E00AA8930 /* RiceWidgetExtension */;
+			targetProxy = D1DD127A2C27BF4F00AA8930 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -468,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -654,6 +763,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -680,6 +790,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -700,6 +811,123 @@
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
+		};
+		D1DD127E2C27BF5000AA8930 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4AGKPD6C4A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RiceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RiceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gistory.rice.RiceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D1DD127F2C27BF5000AA8930 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4AGKPD6C4A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RiceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RiceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gistory.rice.RiceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D1DD12802C27BF5000AA8930 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4AGKPD6C4A;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RiceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RiceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gistory.rice.RiceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Profile;
 		};
 /* End XCBuildConfiguration section */
 
@@ -730,6 +958,16 @@
 				97C147061CF9000F007C117D /* Debug */,
 				97C147071CF9000F007C117D /* Release */,
 				249021D4217E4FDB00AE95B9 /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1DD12812C27BF5000AA8930 /* Build configuration list for PBXNativeTarget "RiceWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1DD127E2C27BF5000AA8930 /* Debug */,
+				D1DD127F2C27BF5000AA8930 /* Release */,
+				D1DD12802C27BF5000AA8930 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
