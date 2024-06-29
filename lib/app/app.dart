@@ -11,6 +11,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
+          scrolledUnderElevation: 0,
           backgroundColor: Colors.white,
           titleTextStyle: TextStyle(
             fontSize: 16,
