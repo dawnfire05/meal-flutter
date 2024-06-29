@@ -169,6 +169,7 @@ class _MealContent extends StatelessWidget {
           _buildTitle(),
           const SizedBox(height: 6),
           ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemBuilder: (_, i) => Text(
               menus[i],
