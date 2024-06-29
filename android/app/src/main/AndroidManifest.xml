@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="rice"
+        android:label="meal"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -27,13 +27,13 @@
             </intent-filter>
         </activity>
         
-        <receiver android:name="RiceWidgetReceiver" android:exported="true">
+        <receiver android:name="MealWidgetReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/rice_widget" />
+                android:resource="@xml/meal_widget" />
         </receiver>
         
         <!-- Don't delete the meta-data below.

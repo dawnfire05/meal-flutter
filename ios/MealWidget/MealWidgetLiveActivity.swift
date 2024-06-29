@@ -1,15 +1,8 @@
-//
-//  RiceWidgetLiveActivity.swift
-//  RiceWidget
-//
-//  Created by 보성 on 6/23/24.
-//
-
 import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct RiceWidgetAttributes: ActivityAttributes {
+struct MealWidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var emoji: String
@@ -19,9 +12,9 @@ struct RiceWidgetAttributes: ActivityAttributes {
     var name: String
 }
 
-struct RiceWidgetLiveActivity: Widget {
+struct MealWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: RiceWidgetAttributes.self) { context in
+        ActivityConfiguration(for: MealWidgetAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
                 Text("Hello \(context.state.emoji)")
@@ -56,25 +49,25 @@ struct RiceWidgetLiveActivity: Widget {
     }
 }
 
-extension RiceWidgetAttributes {
-    fileprivate static var preview: RiceWidgetAttributes {
-        RiceWidgetAttributes(name: "World")
+extension MealWidgetAttributes {
+    fileprivate static var preview: MealWidgetAttributes {
+        MealWidgetAttributes(name: "World")
     }
 }
 
-extension RiceWidgetAttributes.ContentState {
-    fileprivate static var smiley: RiceWidgetAttributes.ContentState {
-        RiceWidgetAttributes.ContentState(emoji: "😀")
+extension MealWidgetAttributes.ContentState {
+    fileprivate static var smiley: MealWidgetAttributes.ContentState {
+        MealWidgetAttributes.ContentState(emoji: "😀")
      }
      
-     fileprivate static var starEyes: RiceWidgetAttributes.ContentState {
-         RiceWidgetAttributes.ContentState(emoji: "🤩")
+     fileprivate static var starEyes: MealWidgetAttributes.ContentState {
+         MealWidgetAttributes.ContentState(emoji: "🤩")
      }
 }
 
-#Preview("Notification", as: .content, using: RiceWidgetAttributes.preview) {
-   RiceWidgetLiveActivity()
+#Preview("Notification", as: .content, using: MealWidgetAttributes.preview) {
+   MealWidgetLiveActivity()
 } contentStates: {
-    RiceWidgetAttributes.ContentState.smiley
-    RiceWidgetAttributes.ContentState.starEyes
+    MealWidgetAttributes.ContentState.smiley
+    MealWidgetAttributes.ContentState.starEyes
 }

@@ -1,3 +1,3 @@
-# rice
+# meal
 
 A new Flutter project.

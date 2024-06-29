@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:home_widget/home_widget.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
-import 'package:rice/palette.dart';
-import 'package:rice/screens/main_screen.dart';
+import 'package:meal/palette.dart';
+import 'package:meal/screens/main_screen.dart';
 
 void main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting();
   Intl.defaultLocale = widgetsBinding.platformDispatcher.locale.languageCode;
-  await HomeWidget.setAppGroupId('group.me.gistory.rice');
+  await HomeWidget.setAppGroupId('group.me.gistory.meal');
   runApp(const MainApp());
 }
 

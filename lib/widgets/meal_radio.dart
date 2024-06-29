@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rice/palette.dart';
+import 'package:meal/palette.dart';
 
-class RiceRadio<T> extends StatelessWidget {
-  const RiceRadio({
+class MealRadio<T> extends StatelessWidget {
+  const MealRadio({
     super.key,
     required this.value,
     required this.onChanged,

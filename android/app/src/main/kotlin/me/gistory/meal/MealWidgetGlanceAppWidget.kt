@@ -1,4 +1,4 @@
-package me.gistory.rice
+package me.gistory.meal
 
 import HomeWidgetGlanceState
 import HomeWidgetGlanceStateDefinition
@@ -9,8 +9,9 @@ import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.provideContent
 import androidx.glance.currentState
 import androidx.glance.layout.Column
+import androidx.glance.state.GlanceStateDefinition
 
-class RiceWidgetGlanceAppWidget: GlanceAppWidget() {
+class MealWidgetGlanceAppWidget: GlanceAppWidget() {
     override val stateDefinition = HomeWidgetGlanceStateDefinition()
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {

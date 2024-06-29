@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:rice/palette.dart';
-import 'package:rice/screens/setting_screen.dart';
+import 'package:meal/palette.dart';
+import 'package:meal/screens/setting_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});

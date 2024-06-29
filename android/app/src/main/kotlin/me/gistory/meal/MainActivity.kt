@@ -1,4 +1,4 @@
-package me.gistory.rice
+package me.gistory.meal
 
 import io.flutter.embedding.android.FlutterActivity
 

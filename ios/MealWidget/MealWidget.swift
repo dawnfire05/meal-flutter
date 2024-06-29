@@ -1,10 +1,3 @@
-//
-//  RiceWidget.swift
-//  RiceWidget
-//
-//  Created by 보성 on 6/23/24.
-//
-
 import WidgetKit
 import SwiftUI
 
@@ -39,7 +32,7 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationAppIntent
 }
 
-struct RiceWidgetEntryView : View {
+struct MealWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
@@ -58,12 +51,12 @@ struct RiceWidgetEntryView : View {
     }
 }
 
-struct RiceWidget: Widget {
-    let kind: String = "RiceWidget"
+struct MealWidget: Widget {
+    let kind: String = "MealWidget"
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-            RiceWidgetEntryView(entry: entry)
+            MealWidgetEntryView(entry: entry)
                 .containerBackground(.white, for: .widget)
         }
     }
@@ -84,14 +77,14 @@ extension ConfigurationAppIntent {
 }
 
 #Preview(as: .systemSmall) {
-    RiceWidget()
+    MealWidget()
 } timeline: {
     SimpleEntry(date: .now, configuration: .smiley)
     SimpleEntry(date: .now, configuration: .starEyes)
 }
 
 #Preview(as: .systemMedium) {
-    RiceWidget()
+    MealWidget()
 } timeline: {
     SimpleEntry(date: .now, configuration: .smiley)
     SimpleEntry(date: .now, configuration: .starEyes)

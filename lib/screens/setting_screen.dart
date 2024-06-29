@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rice/palette.dart';
-import 'package:rice/widgets/rice_radio.dart';
+import 'package:meal/palette.dart';
+import 'package:meal/widgets/meal_radio.dart';
 
 enum Language { korean, english }
 
@@ -42,7 +42,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 children: [
                   Row(
                     children: [
-                      RiceRadio(
+                      MealRadio(
                         value: Language.korean,
                         groupValue: _language,
                         onChanged: (v) => setState(() => _language = v),
@@ -55,7 +55,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   Row(
                     children: [
-                      RiceRadio(
+                      MealRadio(
                         value: Language.english,
                         groupValue: _language,
                         onChanged: (v) => setState(() => _language = v),
@@ -87,7 +87,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 children: [
                   Row(
                     children: [
-                      RiceRadio(
+                      MealRadio(
                         value: WidgetRestaurant.first,
                         groupValue: _widgetRestaurant,
                         onChanged: (v) => setState(() => _widgetRestaurant = v),
@@ -100,7 +100,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   Row(
                     children: [
-                      RiceRadio(
+                      MealRadio(
                         value: WidgetRestaurant.second,
                         groupValue: _widgetRestaurant,
                         onChanged: (v) => setState(() => _widgetRestaurant = v),
