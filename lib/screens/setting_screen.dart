@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meal/gen/strings.g.dart';
 import 'package:meal/palette.dart';
 import 'package:meal/widgets/meal_radio.dart';
-
-enum Language { korean, english }
-
-enum WidgetRestaurant { first, second }
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -15,11 +12,11 @@ class SettingScreen extends StatefulWidget {
 
 class _SettingScreenState extends State<SettingScreen> {
   Language _language = Language.korean;
-  WidgetRestaurant _widgetRestaurant = WidgetRestaurant.first;
+  WidgetRestaurant _widgetRestaurant = WidgetRestaurant.studentUnion1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('설정')),
+      appBar: AppBar(title: Text(t.setting.title)),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -27,9 +24,9 @@ class _SettingScreenState extends State<SettingScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24) +
                   const EdgeInsets.only(top: 20, bottom: 6),
-              child: const Text(
-                '언어',
-                style: TextStyle(
+              child: Text(
+                t.setting.language.label,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Palette.dark,
@@ -39,42 +36,34 @@ class _SettingScreenState extends State<SettingScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Column(
-                children: [
-                  Row(
-                    children: [
-                      MealRadio(
-                        value: Language.korean,
-                        groupValue: _language,
-                        onChanged: (v) => setState(() => _language = v),
+                children: Language.values
+                    .map(
+                      (language) => Row(
+                        children: [
+                          MealRadio(
+                            value: language,
+                            groupValue: _language,
+                            onChanged: (v) => setState(() => _language = v),
+                          ),
+                          Text(
+                            t.setting.language.types(context: language),
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Palette.dark,
+                            ),
+                          ),
+                        ],
                       ),
-                      const Text(
-                        '한국어 (Korean)',
-                        style: TextStyle(fontSize: 16, color: Palette.dark),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      MealRadio(
-                        value: Language.english,
-                        groupValue: _language,
-                        onChanged: (v) => setState(() => _language = v),
-                      ),
-                      const Text(
-                        '영어 (English)',
-                        style: TextStyle(fontSize: 16, color: Palette.dark),
-                      ),
-                    ],
-                  ),
-                ],
+                    )
+                    .toList(),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24) +
                   const EdgeInsets.only(top: 20, bottom: 6),
-              child: const Text(
-                '위젯 식당 설정',
-                style: TextStyle(
+              child: Text(
+                t.setting.widgetSetting.label,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Palette.dark,
@@ -84,34 +73,27 @@ class _SettingScreenState extends State<SettingScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Column(
-                children: [
-                  Row(
-                    children: [
-                      MealRadio(
-                        value: WidgetRestaurant.first,
-                        groupValue: _widgetRestaurant,
-                        onChanged: (v) => setState(() => _widgetRestaurant = v),
+                children: WidgetRestaurant.values
+                    .map(
+                      (restaurant) => Row(
+                        children: [
+                          MealRadio(
+                            value: restaurant,
+                            groupValue: _widgetRestaurant,
+                            onChanged: (v) =>
+                                setState(() => _widgetRestaurant = v),
+                          ),
+                          Text(
+                            t.setting.widgetSetting.types(context: restaurant),
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Palette.dark,
+                            ),
+                          ),
+                        ],
                       ),
-                      const Text(
-                        '제 1학생식당',
-                        style: TextStyle(fontSize: 16, color: Palette.dark),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      MealRadio(
-                        value: WidgetRestaurant.second,
-                        groupValue: _widgetRestaurant,
-                        onChanged: (v) => setState(() => _widgetRestaurant = v),
-                      ),
-                      const Text(
-                        '제 2학생식당',
-                        style: TextStyle(fontSize: 16, color: Palette.dark),
-                      ),
-                    ],
-                  ),
-                ],
+                    )
+                    .toList(),
               ),
             ),
             const SizedBox(height: 30),

@@ -1,0 +1,19 @@
+{
+  "setting": {
+    "title": "Setting",
+    "language": {
+      "label": "Language",
+      "types(context=Language)": {
+        "korean": "Korean (한국어)",
+        "english": "English (영어)"
+      }
+    },
+    "widgetSetting": {
+      "label": "Widget Restaurant Setting",
+      "types(context=WidgetRestaurant)": {
+        "studentUnion1": "Student Union Building 1",
+        "studentUnion2": "Student Union Building 2"
+      }
+    }
+  }
+}

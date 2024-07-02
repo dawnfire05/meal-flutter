@@ -1,0 +1,19 @@
+{
+  "setting": {
+    "title": "설정",
+    "language": {
+      "label": "언어",
+      "types(context=Language)": {
+        "korean": "한국어 (Korean)",
+        "english": "영어 (English)"
+      }
+    },
+    "widgetSetting": {
+      "label": "위젯 식당 설정",
+      "types(context=WidgetRestaurant)": {
+        "studentUnion1": "제 1학생식당",
+        "studentUnion2": "제 2학생식당"
+      }
+    }
+  }
+}
