@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:meal/api/meal_api.dart';
+import 'package:meal/di/locator.dart';
 import 'package:meal/palette.dart';
 import 'package:meal/screens/setting_screen.dart';
 
@@ -49,59 +51,59 @@ class MainScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: const SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-            child: Column(
-              children: [
-                _MealContent(
-                  title: '아침',
-                  duration: '08:00 ~ 09:00',
-                  menus: [
-                    '흑미밥',
-                    '콩나물국',
-                    '계란찜',
-                    '생선까스*타르소스',
-                    '오징어감자조림',
-                    '무말랭이무침',
-                    '배추김치',
-                    '시리얼*우유[우유]',
-                    '토스트*잼',
-                    '야채샐러드*D',
-                  ],
-                ),
-                SizedBox(height: 16),
-                _MealContent(
-                  title: '점심 (일반)',
-                  duration: '11:30 ~ 13:00',
-                  menus: [
-                    '흑미밥',
-                    '대패삼겹차슈덮밥',
-                    '치킨너겟*머스타드',
-                    '애호박나물',
-                    '오복지무침',
-                    '콩나물국',
-                    '배추김치',
-                  ],
-                ),
-                SizedBox(height: 16),
-                _MealContent(
-                  title: '점심 (코너)',
-                  duration: '11:30 ~ 13:00',
-                  menus: [
-                    '돈까스정식(수제돈까스* 스프*모닝빵*후식음료*샐러드*단무지*배추김치) [돼지고기]',
-                  ],
-                ),
-                SizedBox(height: 16),
-                _MealContent(
-                  title: '점심 (2층 르네상스)',
-                  duration: '11:30 ~ 13:00',
-                  menus: [
-                    '잡곡밥',
-                    '치즈닭갈비',
-                  ],
-                ),
-              ],
+        body: TabBarView(
+          children: List.generate(
+            2,
+            (index) => SingleChildScrollView(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                child: FutureBuilder(
+                    future: sl<MealApi>().getMeal(
+                      DateTime.now().year,
+                      DateTime.now().month,
+                      DateTime.now().day,
+                      (index + 1).toString(),
+                      '0',
+                    ),
+                    builder: (context, snapshot) {
+                      return Column(
+                        children: [
+                          _MealContent(
+                            title: '아침',
+                            duration: '08:00 ~ 09:00',
+                            menus: snapshot.data?.breakfast ?? [],
+                          ),
+                          const SizedBox(height: 16),
+                          _MealContent(
+                            title: '점심 (일반)',
+                            duration: '11:30 ~ 13:00',
+                            menus: snapshot.data?.lunch ?? [],
+                          ),
+                          const SizedBox(height: 16),
+                          _MealContent(
+                            title: '점심 (코너)',
+                            duration: '11:30 ~ 13:00',
+                            menus: snapshot.data?.lunchCorner ?? [],
+                          ),
+                          if (index == 0) ...[
+                            const SizedBox(height: 16),
+                            _MealContent(
+                              title: '점심 (2층 르네상스)',
+                              duration: '11:30 ~ 13:00',
+                              menus: snapshot.data?.lunchRenaissance ?? [],
+                            ),
+                          ],
+                          const SizedBox(height: 16),
+                          _MealContent(
+                            title: '저녁',
+                            duration: '17:00 ~ 18:30',
+                            menus: snapshot.data?.dinner ?? [],
+                          ),
+                        ],
+                      );
+                    }),
+              ),
             ),
           ),
         ),
