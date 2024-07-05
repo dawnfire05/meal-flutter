@@ -65,7 +65,11 @@ class _MainScreenState extends State<MainScreen> {
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                child: _Meals(day: days[index], index: tabIndex),
+                child: _Meals(
+                  key: Key(index.toString()),
+                  day: days[index],
+                  index: tabIndex,
+                ),
               ),
             ),
           ),
@@ -113,6 +117,7 @@ class _MainScreenState extends State<MainScreen> {
 
 class _Meals extends StatelessWidget {
   const _Meals({
+    super.key,
     required this.day,
     required this.index,
   });
@@ -122,7 +127,6 @@ class _Meals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(day);
     return FutureBuilder(
         future: sl<MealApi>().getMeal(
           day.year,
@@ -132,6 +136,12 @@ class _Meals extends StatelessWidget {
           '0',
         ),
         builder: (context, snapshot) {
+          if (snapshot.hasError) return Text('Error: ${snapshot.error}');
+          if (!snapshot.hasData) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
           return Column(
             children: [
               _MealContent(
