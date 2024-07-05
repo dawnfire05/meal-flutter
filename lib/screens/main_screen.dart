@@ -5,8 +5,15 @@ import 'package:meal/di/locator.dart';
 import 'package:meal/palette.dart';
 import 'package:meal/screens/setting_screen.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -54,55 +61,11 @@ class MainScreen extends StatelessWidget {
         body: TabBarView(
           children: List.generate(
             2,
-            (index) => SingleChildScrollView(
+            (tabIndex) => SingleChildScrollView(
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                child: FutureBuilder(
-                    future: sl<MealApi>().getMeal(
-                      DateTime.now().year,
-                      DateTime.now().month,
-                      DateTime.now().day,
-                      (index + 1).toString(),
-                      '0',
-                    ),
-                    builder: (context, snapshot) {
-                      return Column(
-                        children: [
-                          _MealContent(
-                            title: '아침',
-                            duration: '08:00 ~ 09:00',
-                            menus: snapshot.data?.breakfast ?? [],
-                          ),
-                          const SizedBox(height: 16),
-                          _MealContent(
-                            title: '점심 (일반)',
-                            duration: '11:30 ~ 13:00',
-                            menus: snapshot.data?.lunch ?? [],
-                          ),
-                          const SizedBox(height: 16),
-                          _MealContent(
-                            title: '점심 (코너)',
-                            duration: '11:30 ~ 13:00',
-                            menus: snapshot.data?.lunchCorner ?? [],
-                          ),
-                          if (index == 0) ...[
-                            const SizedBox(height: 16),
-                            _MealContent(
-                              title: '점심 (2층 르네상스)',
-                              duration: '11:30 ~ 13:00',
-                              menus: snapshot.data?.lunchRenaissance ?? [],
-                            ),
-                          ],
-                          const SizedBox(height: 16),
-                          _MealContent(
-                            title: '저녁',
-                            duration: '17:00 ~ 18:30',
-                            menus: snapshot.data?.dinner ?? [],
-                          ),
-                        ],
-                      );
-                    }),
+                child: _Meals(day: days[index], index: tabIndex),
               ),
             ),
           ),
@@ -117,30 +80,94 @@ class MainScreen extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
           unselectedLabelStyle: const TextStyle(fontSize: 14),
+          currentIndex: index,
+          onTap: (day) => setState(() => index = day),
           items: days
-              .map((day) => BottomNavigationBarItem(
-                    activeIcon: Text(
-                      day.day.toString(),
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Palette.primary,
-                        fontWeight: FontWeight.bold,
-                      ),
+              .map(
+                (day) => BottomNavigationBarItem(
+                  activeIcon: Text(
+                    day.day.toString(),
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Palette.primary,
+                      fontWeight: FontWeight.bold,
                     ),
-                    icon: Text(
-                      day.day.toString(),
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Palette.dark,
-                        fontWeight: FontWeight.w600,
-                      ),
+                  ),
+                  icon: Text(
+                    day.day.toString(),
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Palette.dark,
+                      fontWeight: FontWeight.w600,
                     ),
-                    label: DateFormat.E().format(day),
-                  ))
+                  ),
+                  label: DateFormat.E().format(day),
+                ),
+              )
               .toList(),
         ),
       ),
     );
+  }
+}
+
+class _Meals extends StatelessWidget {
+  const _Meals({
+    required this.day,
+    required this.index,
+  });
+
+  final DateTime day;
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    print(day);
+    return FutureBuilder(
+        future: sl<MealApi>().getMeal(
+          day.year,
+          day.month,
+          day.day,
+          (index + 1).toString(),
+          '0',
+        ),
+        builder: (context, snapshot) {
+          return Column(
+            children: [
+              _MealContent(
+                title: '아침',
+                duration: '08:00 ~ 09:00',
+                menus: snapshot.data?.breakfast ?? [],
+              ),
+              const SizedBox(height: 16),
+              _MealContent(
+                title: '점심 (일반)',
+                duration: '11:30 ~ 13:00',
+                menus: snapshot.data?.lunch ?? [],
+              ),
+              const SizedBox(height: 16),
+              _MealContent(
+                title: '점심 (코너)',
+                duration: '11:30 ~ 13:00',
+                menus: snapshot.data?.lunchCorner ?? [],
+              ),
+              if (index == 0) ...[
+                const SizedBox(height: 16),
+                _MealContent(
+                  title: '점심 (2층 르네상스)',
+                  duration: '11:30 ~ 13:00',
+                  menus: snapshot.data?.lunchRenaissance ?? [],
+                ),
+              ],
+              const SizedBox(height: 16),
+              _MealContent(
+                title: '저녁',
+                duration: '17:00 ~ 18:30',
+                menus: snapshot.data?.dinner ?? [],
+              ),
+            ],
+          );
+        });
   }
 }
 
