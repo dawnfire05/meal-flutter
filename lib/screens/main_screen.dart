@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:meal/api/meal_api.dart';
 import 'package:meal/di/locator.dart';
+import 'package:meal/gen/assets.gen.dart';
 import 'package:meal/palette.dart';
 import 'package:meal/screens/setting_screen.dart';
 
@@ -61,16 +62,10 @@ class _MainScreenState extends State<MainScreen> {
         body: TabBarView(
           children: List.generate(
             2,
-            (tabIndex) => SingleChildScrollView(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                child: _Meals(
-                  key: Key(index.toString()),
-                  day: days[index],
-                  index: tabIndex,
-                ),
-              ),
+            (tabIndex) => _Meals(
+              key: Key(tabIndex.toString()),
+              day: days[index],
+              index: tabIndex,
             ),
           ),
         ),
@@ -136,47 +131,53 @@ class _Meals extends StatelessWidget {
           '0',
         ),
         builder: (context, snapshot) {
-          if (snapshot.hasError) return Text('Error: ${snapshot.error}');
+          if (snapshot.hasError) {
+            return const _NoMealData();
+          }
           if (!snapshot.hasData) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
-          return Column(
-            children: [
-              _MealContent(
-                title: '아침',
-                duration: '08:00 ~ 09:00',
-                menus: snapshot.data?.breakfast ?? [],
-              ),
-              const SizedBox(height: 16),
-              _MealContent(
-                title: '점심 (일반)',
-                duration: '11:30 ~ 13:00',
-                menus: snapshot.data?.lunch ?? [],
-              ),
-              const SizedBox(height: 16),
-              _MealContent(
-                title: '점심 (코너)',
-                duration: '11:30 ~ 13:00',
-                menus: snapshot.data?.lunchCorner ?? [],
-              ),
-              if (index == 0) ...[
+          return SingleChildScrollView(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            child: Column(
+              children: [
+                _MealContent(
+                  title: '아침',
+                  duration: '08:00 ~ 09:00',
+                  menus: snapshot.data?.breakfast ?? [],
+                ),
                 const SizedBox(height: 16),
                 _MealContent(
-                  title: '점심 (2층 르네상스)',
+                  title: '점심 (일반)',
                   duration: '11:30 ~ 13:00',
-                  menus: snapshot.data?.lunchRenaissance ?? [],
+                  menus: snapshot.data?.lunch ?? [],
+                ),
+                const SizedBox(height: 16),
+                _MealContent(
+                  title: '점심 (코너)',
+                  duration: '11:30 ~ 13:00',
+                  menus: snapshot.data?.lunchCorner ?? [],
+                ),
+                if (index == 0) ...[
+                  const SizedBox(height: 16),
+                  _MealContent(
+                    title: '점심 (2층 르네상스)',
+                    duration: '11:30 ~ 13:00',
+                    menus: snapshot.data?.lunchRenaissance ?? [],
+                  ),
+                ],
+                const SizedBox(height: 16),
+                _MealContent(
+                  title: '저녁',
+                  duration: '17:00 ~ 18:30',
+                  menus: snapshot.data?.dinner ?? [],
                 ),
               ],
-              const SizedBox(height: 16),
-              _MealContent(
-                title: '저녁',
-                duration: '17:00 ~ 18:30',
-                menus: snapshot.data?.dinner ?? [],
-              ),
-            ],
-          );
+            ),
+          ));
         });
   }
 }
@@ -236,5 +237,32 @@ class _MealContent extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class _NoMealData extends StatelessWidget {
+  const _NoMealData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Assets.logo.svg(
+            width: 120,
+            height: 120,
+          ),
+          Container(
+              margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: const Text(
+                "등록된 식단이 없습니다.",
+                style: TextStyle(
+                  color: Palette.grey,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18,
+                ),
+              ))
+        ]);
   }
 }
