@@ -132,7 +132,9 @@ class _Meals extends StatelessWidget {
         ),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const _NoMealData();
+            return const Center(
+              child: _NoMealData(),
+            );
           }
           if (!snapshot.hasData) {
             return const Center(
@@ -245,24 +247,21 @@ class _NoMealData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Assets.logo.svg(
-            width: 120,
-            height: 120,
-          ),
-          Container(
-              margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-              child: const Text(
-                "등록된 식단이 없습니다.",
-                style: TextStyle(
-                  color: Palette.grey,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 18,
-                ),
-              ))
-        ]);
+    return Column(mainAxisSize: MainAxisSize.min, children: [
+      Assets.logo.svg(
+        width: 120,
+        height: 120,
+      ),
+      Container(
+          margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+          child: const Text(
+            "등록된 식단이 없습니다.",
+            style: TextStyle(
+              color: Palette.grey,
+              fontWeight: FontWeight.w700,
+              fontSize: 18,
+            ),
+          ))
+    ]);
   }
 }
