@@ -247,12 +247,14 @@ class _NoMealData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisSize: MainAxisSize.min, children: [
-      Assets.logo.svg(
-        width: 120,
-        height: 120,
-      ),
-      Container(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Assets.logo.svg(
+          width: 120,
+          height: 120,
+        ),
+        Container(
           margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
           child: const Text(
             "등록된 식단이 없습니다.",
@@ -261,7 +263,9 @@ class _NoMealData extends StatelessWidget {
               fontWeight: FontWeight.w700,
               fontSize: 18,
             ),
-          ))
-    ]);
+          ),
+        )
+      ],
+    );
   }
 }
