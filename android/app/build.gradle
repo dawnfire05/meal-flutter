@@ -51,6 +51,14 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.4"
+    }
 }
 
 flutter {
@@ -58,5 +66,5 @@ flutter {
 }
 
 dependencies {
-    implementation "androidx.glance:glance-appwidget:1.1.0"
+    implementation "androidx.glance:glance-appwidget:1.0.0"
 }
