@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:meal/api/meal_api.dart';
-import 'package:meal/di/locator.dart';
+import 'package:meal/app/modules/meals/data/data_sources/remote/meal_api.dart';
+import 'package:meal/app/di/locator.dart';
+import 'package:meal/app/router/routes.dart';
 import 'package:meal/gen/assets.gen.dart';
+import 'package:meal/gen/strings.g.dart';
 import 'package:meal/palette.dart';
-import 'package:meal/screens/setting_screen.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class MealPage extends StatefulWidget {
+  const MealPage({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<MealPage> createState() => _MealPageState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MealPageState extends State<MealPage> {
   int index = 0;
 
   @override
@@ -23,29 +24,27 @@ class _MainScreenState extends State<MainScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.sync),
-            onPressed: () {},
-          ),
+          // leading: IconButton(
+          //   icon: const Icon(Icons.sync),
+          //   onPressed: () {},
+          // ),
           title: Text(DateFormat.MMMEd().format(DateTime.now())),
           actions: [
             IconButton(
               icon: const Icon(Icons.settings),
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const SettingScreen()),
-              ),
+              onPressed: () => const SettingRoute().push(context),
             ),
           ],
-          bottom: const TabBar(
+          bottom: TabBar(
             indicatorColor: Palette.primary,
             labelColor: Palette.primary,
-            labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            labelStyle:
+                const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             dividerColor: Palette.grey,
             dividerHeight: 3,
             indicatorSize: TabBarIndicatorSize.tab,
-            indicatorPadding: EdgeInsets.symmetric(horizontal: 30),
-            indicator: BoxDecoration(
+            indicatorPadding: const EdgeInsets.symmetric(horizontal: 30),
+            indicator: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
                   color: Palette.primary,
@@ -54,8 +53,14 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             tabs: [
-              Tab(text: '제 1학생식당'),
-              Tab(text: '제 2학생식당'),
+              Tab(
+                child: Text(context.t.setting.widgetSetting
+                    .types(context: WidgetRestaurant.studentUnion1)),
+              ),
+              Tab(
+                child: Text(context.t.setting.widgetSetting
+                    .types(context: WidgetRestaurant.studentUnion2)),
+              ),
             ],
           ),
         ),

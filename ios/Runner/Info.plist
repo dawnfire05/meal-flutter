@@ -43,6 +43,11 @@
 			<string>UIInterfaceOrientationPortrait</string>
 			<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		</array>
+		<key>CFBundleLocalizations</key>
+		<array>
+   		<string>ko</string>
+   		<string>en</string>
+		</array>
 		<key>UIStatusBarHidden</key>
 		<false/>
 	</dict>

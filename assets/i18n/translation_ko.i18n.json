@@ -3,9 +3,9 @@
     "title": "설정",
     "language": {
       "label": "언어",
-      "types(context=Language)": {
-        "korean": "한국어 (Korean)",
-        "english": "영어 (English)"
+      "types(context=AppLocale)": {
+        "ko": "한국어 (Korean)",
+        "en": "영어 (English)"
       }
     },
     "widgetSetting": {

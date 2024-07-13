@@ -2,3 +2,6 @@ base_locale: en
 input_directory: assets/i18n
 namespaces: false
 timestamp: false
+contexts:
+  AppLocale:
+    generate_enum: false

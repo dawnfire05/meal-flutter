@@ -3,16 +3,16 @@
     "title": "Setting",
     "language": {
       "label": "Language",
-      "types(context=Language)": {
-        "korean": "Korean (한국어)",
-        "english": "English (영어)"
+      "types(context=AppLocale)": {
+        "ko": "Korean (한국어)",
+        "en": "English (영어)"
       }
     },
     "widgetSetting": {
       "label": "Widget Restaurant Setting",
       "types(context=WidgetRestaurant)": {
-        "studentUnion1": "Student Union Building 1",
-        "studentUnion2": "Student Union Building 2"
+        "studentUnion1": "Student Union Bldg 1",
+        "studentUnion2": "Student Union Bldg 2"
       }
     }
   }

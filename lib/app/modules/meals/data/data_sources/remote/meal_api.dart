@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meal/api/models/meal_model.dart';
+import 'package:meal/app/modules/meals/data/models/meal_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'meal_api.g.dart';
 
-@singleton
+@injectable
 @RestApi(baseUrl: '/meals')
 abstract class MealApi {
   @factoryMethod

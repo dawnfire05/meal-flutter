@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meal/app/entities/meal_entity.dart';
+import 'package:meal/app/modules/meals/domain/entities/meal_entity.dart';
 
 part 'meal_model.freezed.dart';
 part 'meal_model.g.dart';

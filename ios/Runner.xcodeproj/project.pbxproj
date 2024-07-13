@@ -16,14 +16,6 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		A987C433FD62DF7D49559418 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5C78E40BBD3D48D3FAE048 /* Pods_Runner.framework */; };
-		D1BCBE7F2C302DA200740CA6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BCBE7E2C302DA200740CA6 /* WidgetKit.framework */; };
-		D1BCBE812C302DA200740CA6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BCBE802C302DA200740CA6 /* SwiftUI.framework */; };
-		D1BCBE842C302DA200740CA6 /* MealWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BCBE832C302DA200740CA6 /* MealWidgetBundle.swift */; };
-		D1BCBE862C302DA200740CA6 /* MealWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BCBE852C302DA200740CA6 /* MealWidgetLiveActivity.swift */; };
-		D1BCBE882C302DA200740CA6 /* MealWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BCBE872C302DA200740CA6 /* MealWidget.swift */; };
-		D1BCBE8A2C302DA200740CA6 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BCBE892C302DA200740CA6 /* AppIntent.swift */; };
-		D1BCBE8C2C302DA400740CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BCBE8B2C302DA400740CA6 /* Assets.xcassets */; };
-		D1BCBE902C302DA400740CA6 /* MealWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D1BCBE7D2C302DA200740CA6 /* MealWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +25,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
 			remoteInfo = Runner;
-		};
-		D1BCBE8E2C302DA400740CA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D1BCBE7C2C302DA200740CA6;
-			remoteInfo = MealWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,7 +45,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D1BCBE902C302DA400740CA6 /* MealWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,16 +74,8 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1BCBE782C302D3C00740CA6 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		D1BCBE7D2C302DA200740CA6 /* MealWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1BCBE7E2C302DA200740CA6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D1BCBE802C302DA200740CA6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		D1BCBE832C302DA200740CA6 /* MealWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealWidgetBundle.swift; sourceTree = "<group>"; };
-		D1BCBE852C302DA200740CA6 /* MealWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		D1BCBE872C302DA200740CA6 /* MealWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealWidget.swift; sourceTree = "<group>"; };
-		D1BCBE892C302DA200740CA6 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
-		D1BCBE8B2C302DA400740CA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D1BCBE8D2C302DA400740CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1BCBE962C302DB100740CA6 /* MealWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MealWidgetExtension.entitlements; sourceTree = "<group>"; };
 		D821524DF6D1D83DE021825E /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		E8B10360C27679EDF770D9CF /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,15 +94,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A987C433FD62DF7D49559418 /* Pods_Runner.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D1BCBE7A2C302DA200740CA6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D1BCBE812C302DA200740CA6 /* SwiftUI.framework in Frameworks */,
-				D1BCBE7F2C302DA200740CA6 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +137,6 @@
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
-				D1BCBE822C302DA200740CA6 /* MealWidget */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				122FB039DCF91E145BBF271E /* Pods */,
@@ -183,7 +149,6 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
-				D1BCBE7D2C302DA200740CA6 /* MealWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,20 +178,6 @@
 				D1BCBE802C302DA200740CA6 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D1BCBE822C302DA200740CA6 /* MealWidget */ = {
-			isa = PBXGroup;
-			children = (
-				D1BCBE962C302DB100740CA6 /* MealWidgetExtension.entitlements */,
-				D1BCBE832C302DA200740CA6 /* MealWidgetBundle.swift */,
-				D1BCBE852C302DA200740CA6 /* MealWidgetLiveActivity.swift */,
-				D1BCBE872C302DA200740CA6 /* MealWidget.swift */,
-				D1BCBE892C302DA200740CA6 /* AppIntent.swift */,
-				D1BCBE8B2C302DA400740CA6 /* Assets.xcassets */,
-				D1BCBE8D2C302DA400740CA6 /* Info.plist */,
-			);
-			path = MealWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,29 +219,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				D1BCBE8F2C302DA400740CA6 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
 			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D1BCBE7C2C302DA200740CA6 /* MealWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D1BCBE912C302DA400740CA6 /* Build configuration list for PBXNativeTarget "MealWidgetExtension" */;
-			buildPhases = (
-				D1BCBE792C302DA200740CA6 /* Sources */,
-				D1BCBE7A2C302DA200740CA6 /* Frameworks */,
-				D1BCBE7B2C302DA200740CA6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MealWidgetExtension;
-			productName = MealWidgetExtension;
-			productReference = D1BCBE7D2C302DA200740CA6 /* MealWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -311,9 +244,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1100;
 					};
-					D1BCBE7C2C302DA200740CA6 = {
-						CreatedOnToolsVersion = 15.4;
-					};
 				};
 			};
 			buildConfigurationList = 97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */;
@@ -331,7 +261,6 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
-				D1BCBE7C2C302DA200740CA6 /* MealWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -352,14 +281,6 @@
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D1BCBE7B2C302DA200740CA6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D1BCBE8C2C302DA400740CA6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,17 +399,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D1BCBE792C302DA200740CA6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D1BCBE842C302DA200740CA6 /* MealWidgetBundle.swift in Sources */,
-				D1BCBE8A2C302DA200740CA6 /* AppIntent.swift in Sources */,
-				D1BCBE882C302DA200740CA6 /* MealWidget.swift in Sources */,
-				D1BCBE862C302DA200740CA6 /* MealWidgetLiveActivity.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -496,11 +406,6 @@
 			isa = PBXTargetDependency;
 			target = 97C146ED1CF9000F007C117D /* Runner */;
 			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
-		};
-		D1BCBE8F2C302DA400740CA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D1BCBE7C2C302DA200740CA6 /* MealWidgetExtension */;
-			targetProxy = D1BCBE8E2C302DA400740CA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -831,135 +736,6 @@
 			};
 			name = Release;
 		};
-		D1BCBE922C302DA400740CA6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = MealWidget/MealWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = 4AGKPD6C4A;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MealWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MealWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = "$(FLUTTER_BUILD_NAME)";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.gistory.meal.MealWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		D1BCBE932C302DA400740CA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = MealWidget/MealWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = 4AGKPD6C4A;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MealWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MealWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = "$(FLUTTER_BUILD_NAME)";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.gistory.meal.MealWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		D1BCBE942C302DA400740CA6 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = AppIcon;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = MealWidget/MealWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = 4AGKPD6C4A;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MealWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MealWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = "$(FLUTTER_BUILD_NAME)";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.gistory.meal.MealWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Profile;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -989,16 +765,6 @@
 				97C147061CF9000F007C117D /* Debug */,
 				97C147071CF9000F007C117D /* Release */,
 				249021D4217E4FDB00AE95B9 /* Profile */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D1BCBE912C302DA400740CA6 /* Build configuration list for PBXNativeTarget "MealWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D1BCBE922C302DA400740CA6 /* Debug */,
-				D1BCBE932C302DA400740CA6 /* Release */,
-				D1BCBE942C302DA400740CA6 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

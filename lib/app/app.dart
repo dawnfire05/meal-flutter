@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:meal/app/router/routes.dart';
+import 'package:meal/gen/strings.g.dart';
 import 'package:meal/palette.dart';
-import 'package:meal/screens/main_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
@@ -20,7 +22,10 @@ class App extends StatelessWidget {
           ),
         ),
       ),
-      home: const MainScreen(),
+      routerConfig: AppRoutes.config,
+      locale: TranslationProvider.of(context).flutterLocale,
+      supportedLocales: AppLocaleUtils.supportedLocales,
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
     );
   }
 }
