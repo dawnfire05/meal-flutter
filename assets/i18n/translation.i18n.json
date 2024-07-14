@@ -14,6 +14,18 @@
         "studentUnion1": "Student Union Bldg 1",
         "studentUnion2": "Student Union Bldg 2"
       }
-    }
-  }
+    },
+    "time": {
+      "label": "Meal Time",
+      "types(context=MealTime)": {
+        "breakfast": "Breakfast",
+        "lunch": "Lunch",
+        "lunchSpecial": "Lunch (Special)",
+        "lunchRenaissance": "Lunch (2F: Renaissance)",
+        "dinner": "Dinner"
+      }
+    },
+    "noMealMessage": "There are no registered meal plans."
+  },
+  "openSourceLicenses": "Open source licenses"
 }

@@ -14,6 +14,18 @@
         "studentUnion1": "제 1학생식당",
         "studentUnion2": "제 2학생식당"
       }
-    }
-  }
+    },
+    "time": {
+      "label": "식사 시간",
+      "types(context=MealTime)": {
+        "breakfast": "아침",
+        "lunch": "점심 (일반)",
+        "lunchSpecial": "점심 (코너)",
+        "lunchRenaissance": "점심 (2층 르네상스)",
+        "dinner": "저녁"
+      }
+    },
+    "noMealMessage": "등록된 식단이 없습니다."
+  },
+  "openSourceLicenses": "오픈소스 라이선스"
 }

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:meal/app/di/locator.dart';
 import 'package:meal/app/modules/setting/domain/repositories/language_setting_repository.dart';
+import 'package:meal/app/router/routes.dart';
 
 import 'package:meal/gen/strings.g.dart';
 import 'package:meal/palette.dart';
 import 'package:meal/app/modules/meals/presentation/widgets/meal_radio.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -61,6 +63,24 @@ class _SettingPageState extends State<SettingPage> {
                     .toList(),
               ),
             ),
+            const Divider(
+              height: 10,
+              thickness: 0.3,
+              indent: 20,
+              endIndent: 20,
+              color: Palette.grey,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Column(
+                children: [
+                  ListTile(
+                    title: Text(context.t.openSourceLicenses),
+                    onTap: () => const PackagesRoute().push(context),
+                  ),
+                ],
+              ),
+            ),
             // Padding(
             //   padding: const EdgeInsets.symmetric(horizontal: 24) +
             //       const EdgeInsets.only(top: 20, bottom: 6),
@@ -103,11 +123,18 @@ class _SettingPageState extends State<SettingPage> {
             const SizedBox(height: 30),
             DefaultTextStyle.merge(
               style: const TextStyle(fontSize: 14, color: Palette.grey),
-              child: const Column(
+              child: Column(
                 children: [
-                  Text('밥인지 v1.0.0'),
-                  Text('Currently Managed by GSA Infoteam'),
-                  Text('Originally Made by Hidden Layer'),
+                  FutureBuilder(
+                    future: PackageInfo.fromPlatform(),
+                    builder: (_, snapshot) => Text(
+                      snapshot.data != null
+                          ? '밥인지 v${snapshot.data?.version}'
+                          : '불러오는 중..',
+                    ),
+                  ),
+                  const Text('Currently Managed by GSA Infoteam'),
+                  // const Text('Originally Made by Hidden Layer'),
                 ],
               ),
             ),

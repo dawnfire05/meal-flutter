@@ -28,7 +28,7 @@ class _MealPageState extends State<MealPage> {
           //   icon: const Icon(Icons.sync),
           //   onPressed: () {},
           // ),
-          title: Text(DateFormat.MMMEd().format(DateTime.now())),
+          title: Text(DateFormat.MMMEd().format(days[index])),
           actions: [
             IconButton(
               icon: const Icon(Icons.settings),
@@ -152,33 +152,36 @@ class _Meals extends StatelessWidget {
             child: Column(
               children: [
                 _MealContent(
-                  title: '아침',
+                  title:
+                      context.t.setting.time.types(context: MealTime.breakfast),
                   duration: '08:00 ~ 09:00',
                   menus: snapshot.data?.breakfast ?? [],
                 ),
                 const SizedBox(height: 16),
                 _MealContent(
-                  title: '점심 (일반)',
+                  title: context.t.setting.time.types(context: MealTime.lunch),
                   duration: '11:30 ~ 13:00',
                   menus: snapshot.data?.lunch ?? [],
                 ),
                 const SizedBox(height: 16),
                 _MealContent(
-                  title: '점심 (코너)',
+                  title: context.t.setting.time
+                      .types(context: MealTime.lunchSpecial),
                   duration: '11:30 ~ 13:00',
                   menus: snapshot.data?.lunchCorner ?? [],
                 ),
                 if (index == 0) ...[
                   const SizedBox(height: 16),
                   _MealContent(
-                    title: '점심 (2층 르네상스)',
+                    title: context.t.setting.time
+                        .types(context: MealTime.lunchRenaissance),
                     duration: '11:30 ~ 13:00',
                     menus: snapshot.data?.lunchRenaissance ?? [],
                   ),
                 ],
                 const SizedBox(height: 16),
                 _MealContent(
-                  title: '저녁',
+                  title: context.t.setting.time.types(context: MealTime.dinner),
                   duration: '17:00 ~ 18:30',
                   menus: snapshot.data?.dinner ?? [],
                 ),
@@ -261,9 +264,9 @@ class _NoMealData extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-          child: const Text(
-            "등록된 식단이 없습니다.",
-            style: TextStyle(
+          child: Text(
+            context.t.setting.noMealMessage,
+            style: const TextStyle(
               color: Palette.grey,
               fontWeight: FontWeight.w700,
               fontSize: 18,
