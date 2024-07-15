@@ -54,11 +54,11 @@ class _MealPageState extends State<MealPage> {
             ),
             tabs: [
               Tab(
-                child: Text(context.t.setting.widgetSetting
+                child: Text(context.t.meal.restaurant
                     .types(context: WidgetRestaurant.studentUnion1)),
               ),
               Tab(
-                child: Text(context.t.setting.widgetSetting
+                child: Text(context.t.meal.restaurant
                     .types(context: WidgetRestaurant.studentUnion2)),
               ),
             ],
@@ -133,7 +133,7 @@ class _Meals extends StatelessWidget {
           day.month,
           day.day,
           (index + 1).toString(),
-          '0',
+          context.t.meal.requestParams.countryCode,
         ),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
@@ -152,28 +152,27 @@ class _Meals extends StatelessWidget {
             child: Column(
               children: [
                 _MealContent(
-                  title:
-                      context.t.setting.time.types(context: MealTime.breakfast),
+                  title: context.t.meal.time.types(context: MealTime.breakfast),
                   duration: '08:00 ~ 09:00',
                   menus: snapshot.data?.breakfast ?? [],
                 ),
                 const SizedBox(height: 16),
                 _MealContent(
-                  title: context.t.setting.time.types(context: MealTime.lunch),
+                  title: context.t.meal.time.types(context: MealTime.lunch),
                   duration: '11:30 ~ 13:00',
                   menus: snapshot.data?.lunch ?? [],
                 ),
                 const SizedBox(height: 16),
                 _MealContent(
-                  title: context.t.setting.time
-                      .types(context: MealTime.lunchSpecial),
+                  title:
+                      context.t.meal.time.types(context: MealTime.lunchSpecial),
                   duration: '11:30 ~ 13:00',
                   menus: snapshot.data?.lunchCorner ?? [],
                 ),
                 if (index == 0) ...[
                   const SizedBox(height: 16),
                   _MealContent(
-                    title: context.t.setting.time
+                    title: context.t.meal.time
                         .types(context: MealTime.lunchRenaissance),
                     duration: '11:30 ~ 13:00',
                     menus: snapshot.data?.lunchRenaissance ?? [],
@@ -181,7 +180,7 @@ class _Meals extends StatelessWidget {
                 ],
                 const SizedBox(height: 16),
                 _MealContent(
-                  title: context.t.setting.time.types(context: MealTime.dinner),
+                  title: context.t.meal.time.types(context: MealTime.dinner),
                   duration: '17:00 ~ 18:30',
                   menus: snapshot.data?.dinner ?? [],
                 ),
@@ -265,7 +264,7 @@ class _NoMealData extends StatelessWidget {
         Container(
           margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
           child: Text(
-            context.t.setting.noMealMessage,
+            context.t.meal.widgetNoMeal.noMealMessage,
             style: const TextStyle(
               color: Palette.grey,
               fontWeight: FontWeight.w700,

@@ -17,7 +17,7 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
-  // final WidgetRestaurant _widgetRestaurant = WidgetRestaurant.studentUnion1;
+  // final WidgetBuilding _WidgetBuilding = WidgetBuilding.studentUnion1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,15 +96,15 @@ class _SettingPageState extends State<SettingPage> {
             // Padding(
             //   padding: const EdgeInsets.symmetric(horizontal: 12),
             //   child: Column(
-            //     children: WidgetRestaurant.values
+            //     children: WidgetBuilding.values
             //         .map(
             //           (restaurant) => Row(
             //             children: [
             //               MealRadio(
             //                 value: restaurant,
-            //                 groupValue: _widgetRestaurant,
+            //                 groupValue: _WidgetBuilding,
             //                 onChanged: (v) =>
-            //                     setState(() => _widgetRestaurant = v),
+            //                     setState(() => _WidgetBuilding = v),
             //                 child: Text(
             //                   context.t.setting.widgetSetting
             //                       .types(context: restaurant),

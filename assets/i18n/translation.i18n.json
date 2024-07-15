@@ -9,12 +9,22 @@
       }
     },
     "widgetSetting": {
-      "label": "Widget Restaurant Setting",
+      "label": "Restaurant Setting",
+      "types(context=WidgetRestaurant)": {
+        "studentUnion1": "@:meal.restaurant.types(context=WidgetRestaurant).studentUnion1",
+        "studentUnion2": "@:meal.restaurant.types(context=WidgetRestaurant).studentUnion2"
+      }
+    }
+  },
+  "meal": {
+    "restaurant": {
+      "label": "Restaurant",
       "types(context=WidgetRestaurant)": {
         "studentUnion1": "Student Union Bldg 1",
         "studentUnion2": "Student Union Bldg 2"
       }
     },
+
     "time": {
       "label": "Meal Time",
       "types(context=MealTime)": {
@@ -25,7 +35,12 @@
         "dinner": "Dinner"
       }
     },
-    "noMealMessage": "There are no registered meal plans."
+    "widgetNoMeal": {
+      "noMealMessage": "The meal is being prepared."
+    },
+    "requestParams": {
+      "countryCode": "1"
+    }
   },
   "openSourceLicenses": "Open source licenses"
 }

@@ -9,7 +9,16 @@
       }
     },
     "widgetSetting": {
-      "label": "위젯 식당 설정",
+      "label": "식당 설정",
+      "types(context=WidgetRestaurant)": {
+        "studentUnion1": "@:meal.restaurant.types(context=WidgetRestaurant).studentUnion1",
+        "studentUnion2": "@:meal.restaurant.types(context=WidgetRestaurant).studentUnion2"
+      }
+    }
+  },
+  "meal": {
+    "restaurant": {
+      "label": "식당",
       "types(context=WidgetRestaurant)": {
         "studentUnion1": "제 1학생식당",
         "studentUnion2": "제 2학생식당"
@@ -25,7 +34,12 @@
         "dinner": "저녁"
       }
     },
-    "noMealMessage": "등록된 식단이 없습니다."
+    "widgetNoMeal": {
+      "noMealMessage": "식단이 준비 중입니다."
+    },
+    "requestParams": {
+      "countryCode": "0"
+    }
   },
   "openSourceLicenses": "오픈소스 라이선스"
 }
