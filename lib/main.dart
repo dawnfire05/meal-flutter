@@ -1,3 +1,4 @@
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -17,12 +18,25 @@ void main() async {
   await _initHive();
   await configureDependencies();
   await _initLocale();
+  await _initATT();
   await HomeWidget.setAppGroupId('group.me.gistory.meal');
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   FlutterNativeSplash.remove();
   runApp(TranslationProvider(child: const App()));
+}
+
+Future<void> _initATT() async {
+  final TrackingStatus status =
+      await AppTrackingTransparency.trackingAuthorizationStatus;
+  // If the system can show an authorization request dialog
+  if (status == TrackingStatus.notDetermined) {
+    // Wait for dialog popping animation
+    await Future.delayed(const Duration(milliseconds: 200));
+    // Request system's tracking authorization dialog
+    await AppTrackingTransparency.requestTrackingAuthorization();
+  }
 }
 
 Future<void> _initLocale() async {
