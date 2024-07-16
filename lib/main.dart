@@ -8,6 +8,8 @@ import 'package:meal/app/app.dart';
 import 'package:meal/app/modules/setting/domain/repositories/language_setting_repository.dart';
 import 'package:meal/app/di/locator.dart';
 import 'package:meal/gen/strings.g.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +18,9 @@ void main() async {
   await configureDependencies();
   await _initLocale();
   await HomeWidget.setAppGroupId('group.me.gistory.meal');
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   FlutterNativeSplash.remove();
   runApp(TranslationProvider(child: const App()));
 }

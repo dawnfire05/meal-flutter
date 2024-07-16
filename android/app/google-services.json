@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "247379316618",
+    "project_id": "gsainfoteam-meal",
+    "storage_bucket": "gsainfoteam-meal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247379316618:android:3e0a721d485a1aebf04273",
+        "android_client_info": {
+          "package_name": "me.gistory.meal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ7pqivdpNRUqarkcyh6BZ_0UEPXHYfp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
