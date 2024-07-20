@@ -5,7 +5,7 @@
     tools:node="remove"/>   
     
     <application
-        android:label="meal"
+        android:label="밥인지"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
